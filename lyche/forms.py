@@ -4,7 +4,7 @@ import json
 from django import forms
 from django.contrib.admin.widgets import FilteredSelectMultiple
 
-from skeleton import models as skeleton_models
+from lyche import models as lyche_models
 
 from django.contrib.auth import get_user_model
 User = get_user_model()
@@ -15,7 +15,7 @@ class ExampleForm(forms.ModelForm):
     required_css_class = 'required font-bold' # Space-separated classes added to required fields in templates
 
     class Meta:
-        model = skeleton_models.ExampleModel # Form uses fields from model and enables form.save()
+        model = lyche_models.ExampleModel # Form uses fields from model and enables form.save()
         # fields or excludes is required
         fields = [] # list of fields (field-name as string) allowed in form.
         excludes = [] # list of fields (field-name as string) disallowed in form. (All other fields automatically included)

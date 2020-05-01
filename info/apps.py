@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class SkeletonConfig(AppConfig):
-    name = 'skeleton'
+class InfoConfig(AppConfig):
+    name = 'info'

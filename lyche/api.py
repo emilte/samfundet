@@ -5,7 +5,7 @@ from django.views import View
 from django.http.response import JsonResponse
 from django.http import HttpResponse, HttpResponseBadRequest
 
-from skeleton import models as skeleton_models
+from lyche import models as lyche_models
 
 import logging
 logger = logging.getLogger(__name__)
@@ -23,7 +23,7 @@ class ExampleAPI(View):
     def post(self, request):
         try:
             id = request.POST.get('id', None)
-            examplemodel = skeleton_models.ExampleModel.objects.filter(id=id).first()
+            examplemodel = lyche_models.ExampleModel.objects.filter(id=id).first()
             if examplemodel:
                 pass # Do something
         except Exception as e:

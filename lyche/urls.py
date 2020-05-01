@@ -2,11 +2,11 @@
 from django.urls import path
 from django.views.generic import TemplateView
 
-from skeleton import views
-from skeleton import api
+from lyche import views
+from lyche import api
 # End: imports -----------------------------------------------------------------
 
-app_name = 'skeleton'
+app_name = 'lyche'
 
 urlpatterns = [
     # path(route, view, kwargs=None, name=None)
@@ -14,6 +14,5 @@ urlpatterns = [
     path('example/add/', views.AddExampleModel.as_view(), name="add_examplemodel"),
     path('example/edit/<int:modelID>/', views.EditExampleModel.as_view(), name="edit_examplemodel"),
     path('example/<int:modelID>/', views.ExampleModel.as_view(), name="view_examplemodel"),
-    path('forbidden/', TemplateView.as_view(template_name="skeleton/forbidden.html"), name='forbidden'),
-
+    
 ]

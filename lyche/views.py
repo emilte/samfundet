@@ -13,8 +13,8 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required, permission_required
 from django.shortcuts import render, get_object_or_404, redirect, HttpResponse
 
-from skeleton import forms as skeleton_forms
-from skeleton import models as skeleton_models
+from lyche import forms as lyche_forms
+from lyche import models as lyche_models
 
 User = get_user_model()
 
@@ -23,14 +23,14 @@ User = get_user_model()
 
 perms_example = [
     login_required,
-    permission_required('skeleton.view_examplemodel', login_url='skeleton:forbidden')
+    permission_required('lyche.view_examplemodel', login_url='lyche:forbidden')
 ]
 @method_decorator(perms_example, name='dispatch')
 class AllExampleModels(View):
-    template = 'skeleton/all_examplemodels.html'
+    template = 'lyche/all_examplemodels.html'
 
     def get(self, request):
-        examplemodels = skeleton_models.ExampleModel.objects.all()
+        examplemodels = lyche_models.ExampleModel.objects.all()
         return render(request, self.template, {
             'examplemodels': examplemodels,
         })
@@ -38,16 +38,16 @@ class AllExampleModels(View):
 
 
 class AddExampleModel(main_views.GenericAddModel):
-    # template = 'skeleton/quotation_form.html'
-    form_class = skeleton_forms.ExampleForm
-    redirect_name = 'skeleton:add_examplemodels'
+    # template = 'lyche/quotation_form.html'
+    form_class = lyche_forms.ExampleForm
+    redirect_name = 'lyche:add_examplemodels'
     debug = 2
 
 
 
 class EditExampleModel(main_views.GenericEditModel):
-    # template = 'skeleton/quotation_form.html'
-    form_class = skeleton_forms.ExampleForm
-    redirect_name = 'skeleton:all_examplemodels'
-    model = skeleton_models.Quotation
+    # template = 'lyche/quotation_form.html'
+    form_class = lyche_forms.ExampleForm
+    redirect_name = 'lyche:all_examplemodels'
+    model = lyche_models.Quotation
     debug = 2

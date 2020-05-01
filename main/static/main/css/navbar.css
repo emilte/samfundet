@@ -17,3 +17,7 @@
 #logo {
     filter: invert(1);
 }
+
+nav {
+    background-color: black;
+}
