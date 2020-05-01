@@ -1,0 +1,14 @@
+# Logs
+logs
+*.log
+
+# Django
+.log
+db.sqlite
+db.sqlite3
+sqlite.db
+sqlite3.db
+# migrations
+local_settings.py
+# Pipfile.lock
+mediaroot
